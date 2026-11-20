@@ -1,0 +1,18 @@
+# =============================================================================
+# Media / AI processing dependencies
+# =============================================================================
+# These are only needed once you reach Phase 4+ (transcription and video).
+# They are separated because they are large (faster-whisper pulls in CTranslate2,
+# OpenCV ships compiled binaries) and are not required to start the API.
+#
+# System requirements (install separately, see docs/INSTALLATION.md):
+#   - FFmpeg + FFprobe must be on PATH.
+#
+#   python -m pip install -r requirements-media.txt
+# =============================================================================
+
+faster-whisper==1.2.1        # local speech-to-text (CTranslate2 backend)
+opencv-python==5.1.0.95      # frame sampling, face detection (Phase 7)
+numpy==2.5.5                 # numeric helpers for frame/audio analysis
+scenedetect==0.7.3           # optional scene-change detection
+Pillow==13.0.0               # thumbnail / caption asset utilities

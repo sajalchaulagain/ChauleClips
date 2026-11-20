@@ -1,0 +1,38 @@
+# =============================================================================
+# ChauleClips backend dependencies
+# =============================================================================
+# Pinned to exact versions that were installed and verified together on
+# Python 3.13 (the versions below also support Python 3.11+ and 3.12).
+#
+# Install with:
+#   python -m pip install -r requirements.txt
+#
+# Heavy, phase-specific packages (faster-whisper, OpenCV, scenedetect, ...) are
+# in requirements-media.txt so that a fresh clone can start the API quickly.
+# Install them when you reach the transcription / video phases:
+#   python -m pip install -r requirements-media.txt
+# =============================================================================
+
+# --- Web framework -----------------------------------------------------------
+fastapi==0.165.0
+uvicorn[standard]==0.54.0
+python-multipart==0.0.34     # required later for file uploads (FormData)
+
+# --- Configuration & validation ---------------------------------------------
+pydantic==2.14.4
+pydantic-settings==2.16.3
+
+# --- Database ----------------------------------------------------------------
+# NOTE: we use PyMongo's official *async* API (AsyncMongoClient).
+# Motor was deprecated by MongoDB in favour of this, so we avoid it entirely.
+pymongo==4.20.1
+
+# --- Security ----------------------------------------------------------------
+argon2-cffi==25.1.0          # Argon2id password hashing
+PyJWT==2.15.1                # JWT access tokens
+
+# --- HTTP client (OpenRouter, Phase 5) ---------------------------------------
+httpx==0.28.1
+
+# --- Logging / misc ----------------------------------------------------------
+python-dotenv==1.2.4

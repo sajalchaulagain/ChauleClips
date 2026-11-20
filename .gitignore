@@ -1,0 +1,58 @@
+# ---------------------------------------------------------------------------
+# ChauleClips .gitignore
+# Rule of thumb: source code is committed, everything secret/big/generated is not.
+# ---------------------------------------------------------------------------
+
+# Environment files (templates are committed, real values never are)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+./backend/.env
+E:\ChauleClips\backend
+E:\ChauleClips\backend\.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# Node / frontend
+node_modules/
+dist/
+dist-ssr/
+.vite/
+*.local
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# User media and generated artefacts (can be many GB)
+storage/uploads/*
+storage/extracted_audio/*
+storage/temporary/*
+storage/generated_clips/*
+storage/thumbnails/*
+!storage/**/.gitkeep
+
+# Local databases and logs
+*.log
+logs/
+mongodb-data/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
